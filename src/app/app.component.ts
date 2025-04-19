@@ -11,7 +11,9 @@ export class AppComponent {
   showLayout = false;
   constructor(private taskService: TaskManagerService){
 
-  
+    this.taskService.taskAssigned$.subscribe((task) => {
+      this.showLayout=task;
+    });
 
   }
 }

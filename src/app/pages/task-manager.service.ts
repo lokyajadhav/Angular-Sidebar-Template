@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,18 @@ export class TaskManagerService {
 
   private loggedIn = false;
   private apiUrl = 'http://localhost:8080';
+
+  private taskAssignedSource = new Subject<any>();
+
+  
+  taskAssigned$ = this.taskAssignedSource.asObservable();
+
+ 
+
+  
+  triggerTaskAssigned(task: any) {
+    this.taskAssignedSource.next(task);
+  }
 
   constructor(private http: HttpClient) {}
 
