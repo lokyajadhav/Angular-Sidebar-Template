@@ -49,7 +49,8 @@ export class TaskManagerService {
   login(email: string, password: string, role: string): Observable<any> {
     const payload = {
       "email":email,
-      "password":password
+      "password":password,
+      "designation":role
     }
 
     return this.http.post(`${this.apiUrl}/login`, payload);
