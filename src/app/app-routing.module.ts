@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TaskViewComponent } from './pages/task-view/task-view.component';
+import { TasksManangerComponent } from './pages/tasks-mananger/tasks-mananger.component';
+import { ResourcesComponent } from './pages/resources/resources.component';
 
 
 
-import { FoodListComponent } from './pages/food-list/food-list.component';
-import { ChartpageComponent } from './pages/chart/chart.component';
-import { TodayComponent } from './pages/today/today.component';
 
 const routes: Routes = [
-  { path: 'chart', component: ChartpageComponent },
-  { path: 'today', component: TodayComponent },
-  { path: 'food-list', component: FoodListComponent }
+  { path: 'tasks-view', component: TaskViewComponent },
+  { path: 'task-mapping', component: TasksManangerComponent },
+  { path: 'resources', component: ResourcesComponent }
 ];
 
 @NgModule({
