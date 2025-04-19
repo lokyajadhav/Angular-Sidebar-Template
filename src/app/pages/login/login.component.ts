@@ -23,7 +23,10 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password, role } = this.loginForm.value;
-      if(role == )
+      if(role === "Manager")
+      {
+        lo
+      }
       // this.loginService.login(email, password, role).subscribe(
       //   (response: any) => {
       //     console.log('Login successful', response);
