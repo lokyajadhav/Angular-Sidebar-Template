@@ -23,18 +23,19 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password, role } = this.loginForm.value;
-      this.loginService.login(email, password, role).subscribe(
-        (response: any) => {
-          console.log('Login successful', response);
-          // handle navigation based on role
-          this.loginService.triggerTaskAssigned(true);
-          this.loginService.loggedInn(); // Mark user as logged in
-          this.router.navigate(['/tasks-view']);
-        },
-        (error: any) => {
-          console.error('Login failed', error);
-        }
-      );
+      if(role == )
+      // this.loginService.login(email, password, role).subscribe(
+      //   (response: any) => {
+      //     console.log('Login successful', response);
+      //     // handle navigation based on role
+      //     this.loginService.triggerTaskAssigned(true);
+      //     this.loginService.loggedInn(); // Mark user as logged in
+      //     this.router.navigate(['/tasks-view']);
+      //   },
+      //   (error: any) => {
+      //     console.error('Login failed', error);
+      //   }
+      // );
     }
   }
 }
