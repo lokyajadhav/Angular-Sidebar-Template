@@ -9,7 +9,7 @@ import { Observable, Subject } from 'rxjs';
 export class TaskManagerService {
 
   private loggedIn = false;
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://localhost:8003';
 
   private taskAssignedSource = new Subject<any>();
 
