@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TaskManagerService } from '../task-manager.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,9 @@ import { TaskManagerService } from '../task-manager.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  
 
-  constructor(private fb: FormBuilder, private loginService: TaskManagerService) {
+  constructor(private fb: FormBuilder, private loginService: TaskManagerService, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -25,6 +27,8 @@ export class LoginComponent {
         (response: any) => {
           console.log('Login successful', response);
           // handle navigation based on role
+          this.loginService.loggedInn(); // Mark user as logged in
+          this.router.navigate(['/tasks-view']);
         },
         (error: any) => {
           console.error('Login failed', error);
