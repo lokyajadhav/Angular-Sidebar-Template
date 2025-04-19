@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -22,7 +23,7 @@ export class TaskManagerService {
     this.taskAssignedSource.next(task);
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router:Router) {}
 
 
   loggedInn(): void {
@@ -38,6 +39,7 @@ export class TaskManagerService {
     }
     localStorage.clear();
    this.triggerTaskAssigned(event)
+   this.router.navigate(['/login']);
   }
 
   isLoggedIn(): boolean {
