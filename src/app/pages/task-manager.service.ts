@@ -31,7 +31,12 @@ export class TaskManagerService {
 
   logout(): void {
     this.loggedIn = false;
-   this.triggerTaskAssigned(false)
+    const event={
+          
+      "data":"Null",
+      "loginStatus":false
+    }
+   this.triggerTaskAssigned(event)
   }
 
   isLoggedIn(): boolean {
@@ -40,7 +45,7 @@ export class TaskManagerService {
 
   login(email: string, password: string, role: string): Observable<any> {
     const payload = { email, password };
-    
+
     return this.http.post(`${this.apiUrl}/login`, payload);
   }
 }

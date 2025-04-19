@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private taskService: TaskManagerService){
 
     this.taskService.taskAssigned$.subscribe((task) => {
-      this.showLayout=task;
+      this.showLayout=task.loginStatus;
     });
 
   }

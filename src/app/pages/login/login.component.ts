@@ -23,9 +23,18 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password, role } = this.loginForm.value;
+     
       if(role === "Manager")
       {
-        lo
+        const event={
+          
+          "data":"Manager",
+          "loginStatus":true
+        }
+        this.loginService.triggerTaskAssigned(event)
+       
+           this.loginService.loggedInn(); // Mark user as logged in
+          this.router.navigate(['/tasks-view']);
       }
       // this.loginService.login(email, password, role).subscribe(
       //   (response: any) => {
