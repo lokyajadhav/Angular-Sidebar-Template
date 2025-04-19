@@ -5,7 +5,7 @@ export const navbarData = [
     label: 'Task View'
   },
   {
-    routeLink: 'task-view',
+    routeLink: 'tasks-view',
     icon: 'fa fa-pie-chart',
     label: 'Task View'
   },
@@ -16,7 +16,7 @@ export const navbarData = [
   },
   {
 
-    routeLink: 'today',
+    routeLink: 'resources',
     icon: ' fa fa-history',
     label: 'Resources'
   },

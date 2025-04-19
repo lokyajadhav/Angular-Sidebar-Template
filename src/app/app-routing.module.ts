@@ -9,7 +9,7 @@ import { ResourcesComponent } from './pages/resources/resources.component';
 
 const routes: Routes = [
   { path: 'tasks-view', component: TaskViewComponent },
-  { path: 'task-mapping', component: TasksManangerComponent },
+  { path: 'tasks-manager', component: TasksManangerComponent },
   { path: 'resources', component: ResourcesComponent }
 ];
 
