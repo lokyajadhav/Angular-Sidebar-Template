@@ -36,6 +36,7 @@ export class TaskManagerService {
       "data":"Null",
       "loginStatus":false
     }
+    localStorage.clear();
    this.triggerTaskAssigned(event)
   }
 
