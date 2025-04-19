@@ -26,5 +26,18 @@
             </a>
         </li>
     </ul>
+    <ul class="sidenav-nav" *ngIf="role === 'Developer'">
+        <li class="sidenav-nav-item" *ngFor="let data of navDataDev">
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+            >
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    {{data.label}}
+                </span>
+            </a>
+        </li>
+    </ul>
    
 </div>
