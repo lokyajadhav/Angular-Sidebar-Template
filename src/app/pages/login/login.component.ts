@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  
+
 
   constructor(private fb: FormBuilder, private loginService: TaskManagerService, private router: Router) {
     this.loginForm = this.fb.group({
@@ -22,38 +22,37 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-     
-    const { email, password, role } = this.loginForm.value;
-    console.log("enterd in to login submit")
-   
+
+      const { email, password, role } = this.loginForm.value;
+      console.log("enterd in to login submit")
+
       this.loginService.login(email, password, role).subscribe(
         (response: any) => {
           console.log('Login successful', response);
-          localStorage.setItem('role',role);
-    
-          let event={}
-           if(role === "Manager")
-           {
-              event={
-               
-               "data":"Manager",
-               "loginStatus":true
-             }
-             
-           }
-           else{
-             event={
-               
-               "data":"Developer",
-               "loginStatus":true
-             }
-           }
-     console.log(event)
-     console.log("role: ",role)
-           this.loginService.triggerTaskAssigned(event)
-            
-                this.loginService.loggedInn(); 
-               this.router.navigate(['/tasks-view']);
+          localStorage.setItem('role', role);
+
+          let event = {}
+          if (role === "Manager") {
+            event = {
+
+              "data": "Manager",
+              "loginStatus": true
+            }
+
+          }
+          else {
+            event = {
+
+              "data": "Developer",
+              "loginStatus": true
+            }
+          }
+          console.log(event)
+          console.log("role: ", role)
+          this.loginService.triggerTaskAssigned(event)
+
+          this.loginService.loggedInn();
+          this.router.navigate(['/tasks-view']);
         },
         (error: any) => {
           console.error('Login failed', error);
