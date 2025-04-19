@@ -11,6 +11,7 @@ export class AppComponent {
   showLayout = false;
   constructor(private taskService: TaskManagerService){
 
+    if(localStorage.getItem('role')!=undefined)  this.showLayout=true;
     this.taskService.taskAssigned$.subscribe((task) => {
       this.showLayout=task.loginStatus;
     });
