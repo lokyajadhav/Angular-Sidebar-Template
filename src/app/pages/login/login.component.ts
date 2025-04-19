@@ -22,7 +22,7 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const { email, password, role } = this.loginForm.value;
+    const { email, password, role } = this.loginForm.value;
      let event={}
       if(role === "Manager")
       {
@@ -40,7 +40,8 @@ export class LoginComponent {
           "loginStatus":true
         }
       }
-
+console.log(event)
+console.log("role: ",role)
       this.loginService.triggerTaskAssigned(event)
        
            this.loginService.loggedInn(); 
