@@ -24,6 +24,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
      
     const { email, password, role } = this.loginForm.value;
+    console.log("enterd in to login submit")
     localStorage.setItem('role',role);
     
      let event={}
