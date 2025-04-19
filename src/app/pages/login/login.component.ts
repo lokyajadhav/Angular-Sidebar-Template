@@ -27,6 +27,7 @@ export class LoginComponent {
         (response: any) => {
           console.log('Login successful', response);
           // handle navigation based on role
+          this.loginService.triggerTaskAssigned(true);
           this.loginService.loggedInn(); // Mark user as logged in
           this.router.navigate(['/tasks-view']);
         },
