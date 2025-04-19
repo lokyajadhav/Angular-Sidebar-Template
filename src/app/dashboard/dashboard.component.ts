@@ -17,7 +17,7 @@ export class DashboardComponent {
 
 
 
-  isSideNavCollapsed = false;
+  isSideNavCollapsed = true;
   screenWidth = 0;
 
   onToggleSideNav(data: SideNavToggle): void {

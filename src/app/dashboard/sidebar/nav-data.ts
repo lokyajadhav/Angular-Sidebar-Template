@@ -1,9 +1,5 @@
 export const navbarData = [
-  {
-    routeLink: 'login',
-    icon: 'fa fa-sign-in-alt',  
-    label: 'Login'
-  },
+
   {
     routeLink: 'tasks-view',
     icon: 'fa fa-tasks',  
