@@ -26,9 +26,9 @@ export class LoginComponent {
       const { email, password, role } = this.loginForm.value;
       console.log("enterd in to login submit")
 
-      this.loginService.login(email, password, role).subscribe(
-        (response: any) => {
-          console.log('Login successful', response);
+      // this.loginService.login(email, password, role).subscribe(
+      //   (response: any) => {
+      //     console.log('Login successful', response);
           localStorage.setItem('role', role);
 
           let event = {}
@@ -53,11 +53,11 @@ export class LoginComponent {
 
           this.loginService.loggedInn();
           this.router.navigate(['/tasks-view']);
-        },
-        (error: any) => {
-          console.error('Login failed', error);
-        }
-      );
+      //   },
+      //   (error: any) => {
+      //     console.error('Login failed', error);
+      //   }
+      // );
     }
   }
 }
