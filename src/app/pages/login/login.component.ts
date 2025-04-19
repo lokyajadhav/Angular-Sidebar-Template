@@ -22,7 +22,10 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
+     
     const { email, password, role } = this.loginForm.value;
+    localStorage.setItem('role',role);
+    
      let event={}
       if(role === "Manager")
       {
