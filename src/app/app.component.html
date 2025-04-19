@@ -1,2 +1,2 @@
 <app-dashboard *ngIf="showLayout"></app-dashboard>
-<router-outlet></router-outlet>
+<router-outlet *ngIf="!showLayout"></router-outlet>
