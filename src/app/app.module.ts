@@ -22,6 +22,9 @@ import { TaskViewComponent } from './pages/task-view/task-view.component';
 import { TasksManangerComponent } from './pages/tasks-mananger/tasks-mananger.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -51,6 +54,8 @@ import { LoginComponent } from './pages/login/login.component';
     RouterModule,
     NgApexchartsModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    HttpClientModule
 
 
 
