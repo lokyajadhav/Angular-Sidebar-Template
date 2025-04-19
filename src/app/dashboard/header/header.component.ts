@@ -14,8 +14,9 @@ constructor(private taskService:TaskManagerService)
 
 }
   currentTime: string | undefined;
-
+role:any;
   ngOnInit() {
+    this.role = localStorage.getItem('role');
     setInterval(() => {
       this.currentTime = new Date().toLocaleTimeString();
     }, 1000);}
