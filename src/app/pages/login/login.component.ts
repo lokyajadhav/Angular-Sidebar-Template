@@ -1,0 +1,35 @@
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TaskManagerService } from '../task-manager.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+  loginForm: FormGroup;
+
+  constructor(private fb: FormBuilder, private loginService: TaskManagerService) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      role: ['Developer']  // default role
+    });
+  }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+      const { email, password, role } = this.loginForm.value;
+      this.loginService.login(email, password, role).subscribe(
+        (response: any) => {
+          console.log('Login successful', response);
+          // handle navigation based on role
+        },
+        (error: any) => {
+          console.error('Login failed', error);
+        }
+      );
+    }
+  }
+}
