@@ -1,6 +1,7 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { navbarData, navbarDataDev} from './nav-data';
+import { TaskManagerService } from 'src/app/pages/task-manager.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -48,7 +49,11 @@ export class SidebarComponent implements OnInit {
     screenWidth = 0;
     navData = navbarData;
     navDataDev=navbarDataDev
+    role="Manager"
+constructor(private taskService:TaskManagerService)
+{
 
+}
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
       this.screenWidth = window.innerWidth;
@@ -60,6 +65,10 @@ export class SidebarComponent implements OnInit {
 
     ngOnInit(): void {
         this.screenWidth = window.innerWidth;
+        
+    this.taskService.taskAssigned$.subscribe((task) => {
+      this.role=task.data;
+    });
     }
 
     toggleCollapse(): void {
