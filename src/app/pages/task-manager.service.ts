@@ -40,11 +40,14 @@ export class TaskManagerService {
   }
 
   isLoggedIn(): boolean {
-    return this.loggedIn;
+    if(localStorage.getItem('role')!=undefined) return true; else return false;
   }
 
   login(email: string, password: string, role: string): Observable<any> {
-    const payload = { email, password };
+    const payload = {
+      "email":email,
+      "password":password
+    }
 
     return this.http.post(`${this.apiUrl}/login`, payload);
   }
