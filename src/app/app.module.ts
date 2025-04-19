@@ -24,6 +24,7 @@ import { ResourcesComponent } from './pages/resources/resources.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -55,7 +56,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgApexchartsModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
 
 
 
