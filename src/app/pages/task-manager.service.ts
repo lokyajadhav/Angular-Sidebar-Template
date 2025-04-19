@@ -31,6 +31,7 @@ export class TaskManagerService {
 
   logout(): void {
     this.loggedIn = false;
+   this.triggerTaskAssigned(false)
   }
 
   isLoggedIn(): boolean {
