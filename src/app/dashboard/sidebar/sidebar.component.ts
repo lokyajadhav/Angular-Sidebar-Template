@@ -49,7 +49,7 @@ export class SidebarComponent implements OnInit {
     screenWidth = 0;
     navData = navbarData;
     navDataDev=navbarDataDev
-    role="Manager"
+    role!:any
 constructor(private taskService:TaskManagerService)
 {
 
@@ -64,10 +64,12 @@ constructor(private taskService:TaskManagerService)
     }
 
     ngOnInit(): void {
+      console.log("in the sidenav")
         this.screenWidth = window.innerWidth;
         
     this.taskService.taskAssigned$.subscribe((task) => {
       this.role=task.data;
+      console.log("in the sidenav triggered : ",this.role)
     });
     }
 
