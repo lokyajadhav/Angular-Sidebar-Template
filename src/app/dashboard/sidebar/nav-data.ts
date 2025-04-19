@@ -16,3 +16,14 @@ export const navbarData = [
     label: 'Resources'
   }
 ];
+
+export const navbarDataDev = [
+
+  {
+    routeLink: 'tasks-view',
+    icon: 'fa fa-tasks',  
+    label: 'Task View'
+  },
+ 
+];
+
