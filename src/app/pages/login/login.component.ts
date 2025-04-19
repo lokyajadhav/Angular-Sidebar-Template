@@ -25,43 +25,40 @@ export class LoginComponent {
      
     const { email, password, role } = this.loginForm.value;
     console.log("enterd in to login submit")
-    localStorage.setItem('role',role);
+   
+      this.loginService.login(email, password, role).subscribe(
+        (response: any) => {
+          console.log('Login successful', response);
+          localStorage.setItem('role',role);
     
-     let event={}
-      if(role === "Manager")
-      {
-         event={
-          
-          "data":"Manager",
-          "loginStatus":true
+          let event={}
+           if(role === "Manager")
+           {
+              event={
+               
+               "data":"Manager",
+               "loginStatus":true
+             }
+             
+           }
+           else{
+             event={
+               
+               "data":"Developer",
+               "loginStatus":true
+             }
+           }
+     console.log(event)
+     console.log("role: ",role)
+           this.loginService.triggerTaskAssigned(event)
+            
+                this.loginService.loggedInn(); 
+               this.router.navigate(['/tasks-view']);
+        },
+        (error: any) => {
+          console.error('Login failed', error);
         }
-        
-      }
-      else{
-        event={
-          
-          "data":"Developer",
-          "loginStatus":true
-        }
-      }
-console.log(event)
-console.log("role: ",role)
-      this.loginService.triggerTaskAssigned(event)
-       
-           this.loginService.loggedInn(); 
-          this.router.navigate(['/tasks-view']);
-      // this.loginService.login(email, password, role).subscribe(
-      //   (response: any) => {
-      //     console.log('Login successful', response);
-      //     // handle navigation based on role
-      //     this.loginService.triggerTaskAssigned(true);
-      //     this.loginService.loggedInn(); // Mark user as logged in
-      //     this.router.navigate(['/tasks-view']);
-      //   },
-      //   (error: any) => {
-      //     console.error('Login failed', error);
-      //   }
-      // );
+      );
     }
   }
 }
