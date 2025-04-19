@@ -52,7 +52,7 @@ export class SidebarComponent implements OnInit {
     role!:any
 constructor(private taskService:TaskManagerService)
 {
-
+  this.role=localStorage.getItem('role');
 }
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -67,10 +67,7 @@ constructor(private taskService:TaskManagerService)
       console.log("in the sidenav")
         this.screenWidth = window.innerWidth;
         
-    this.taskService.taskAssigned$.subscribe((task) => {
-      this.role=task.data;
-      console.log("in the sidenav triggered : ",this.role)
-    });
+    
     }
 
     toggleCollapse(): void {
