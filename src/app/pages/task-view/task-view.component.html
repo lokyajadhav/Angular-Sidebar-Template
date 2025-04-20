@@ -31,14 +31,14 @@
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let task">
-          <mat-form-field appearance="outline" style="width: 160px; height: 40px;" class="custom-mat-select">
-            <mat-select [(ngModel)]="selectedStatus" name="status-{{task.id}}" [value]="task.status">
+        <td mat-cell *matCellDef="let element">
+          <mat-form-field appearance="outline"  class="custom-mat-select">
+            <mat-select [(ngModel)]="selectedStatus" name="status-{{element.id}}" [value]="element.status">
               <mat-option *ngFor="let s of statusOptions" [value]="s">{{ s }}</mat-option>
             </mat-select>
           </mat-form-field>
       
-          <button mat-raised-button color="primary" (click)="updateStatus(task.id, task.status)">
+          <button mat-raised-button color="primary" (click)="updateStatus(element.id, element.status)">
             Update
           </button>
         </td>
