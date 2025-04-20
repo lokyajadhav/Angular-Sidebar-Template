@@ -19,7 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import  { BodyComponent } from './body/body.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TaskViewComponent } from './pages/task-view/task-view.component';
-import { TasksManangerComponent } from './pages/tasks-mananger/tasks-mananger.component';
+
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -43,7 +43,7 @@ import { MatSelectModule } from '@angular/material/select';
   
     BodyComponent,
         TaskViewComponent,
-        TasksManangerComponent,
+        
         ResourcesComponent,
         LoginComponent
   ],
