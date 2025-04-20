@@ -33,6 +33,7 @@ console.log(this.userData);
   }
   ngOnInit(): void {
     this.fetchTasks();
+    this.fetchDevTasks();
     this. fetchAvailableDevelopers();
 
     this.assignForm = this.fb.group({
@@ -106,6 +107,7 @@ console.log(this.userData);
     this.taskService.fetchDeveloperTasks(this.userData.userId).subscribe(
       (response: any) => {
        
+        console.log(response)
         this.dataSource1.data=response;
        
         
