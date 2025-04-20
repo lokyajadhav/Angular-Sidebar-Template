@@ -26,6 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -61,6 +63,9 @@ import { MatOptionModule } from '@angular/material/core';
     MatTableModule,
     FormsModule,
     MatOptionModule,
+    MatFormFieldModule,
+    MatSelectModule
+    
 
 
 
