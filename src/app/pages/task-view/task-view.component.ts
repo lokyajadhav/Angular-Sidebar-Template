@@ -36,6 +36,6 @@ export class TaskViewComponent {
   }
 
 
-  updateStatus(task:any): void {
+  updateStatus(task:any, status:any): void {
   }
 }

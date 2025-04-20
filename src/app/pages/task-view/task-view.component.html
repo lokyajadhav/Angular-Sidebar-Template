@@ -31,20 +31,19 @@
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let element">
-          <mat-form-field appearance="fill" class="status-dropdown">
-            <mat-select [(value)]="element.updatedStatus">
-              <mat-option *ngFor="let status of statusOptions" [value]="status">
-                {{ status }}
-              </mat-option>
+        <td mat-cell *matCellDef="let task">
+          <mat-form-field appearance="fill" style="width: 160px;">
+            <mat-select [(ngModel)]="task.status" name="status-{{task.id}}">
+              <mat-option *ngFor="let s of statuses" [value]="s">{{ s }}</mat-option>
             </mat-select>
           </mat-form-field>
       
-          <button mat-raised-button color="primary" (click)="updateStatus(element)">
+          <button mat-raised-button color="primary" (click)="updateStatus(task.id, task.status)">
             Update
           </button>
         </td>
       </ng-container>
+      
       
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
