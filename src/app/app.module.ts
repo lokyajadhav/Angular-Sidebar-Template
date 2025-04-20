@@ -31,6 +31,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TaskCreateDialogComponent } from './pages/task-create-dialog/task-create-dialog.component';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
+
 
 
 
@@ -67,7 +71,7 @@ import { TaskCreateDialogComponent } from './pages/task-create-dialog/task-creat
     FormsModule,
     MatOptionModule,
     MatFormFieldModule,
-    MatSelectModule,MatDialogModule
+    MatSelectModule,MatDialogModule,MatInputModule,MatButtonModule
     
 
 
