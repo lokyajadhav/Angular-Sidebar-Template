@@ -91,7 +91,7 @@ console.log(this.userData);
       (response: any) => {
        console.log("alltask", response)
         this.dataSource.data=response;
-       
+        this.Tasks = response.filter((task: any) => task.status === 'CREATED');
         
         
       },
