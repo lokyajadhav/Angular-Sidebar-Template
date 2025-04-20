@@ -23,8 +23,10 @@ export class TaskViewComponent {
   userData:any;
   constructor(private fb: FormBuilder, private dialog: MatDialog, private taskService:TaskManagerService)
   {
-this.userData.userId=localStorage.getItem('userId');
-this.userData.role=localStorage.getItem('role');
+this.userData={
+userId:localStorage.getItem('userId'),
+role:localStorage.getItem('role')
+}
 console.log(this.userData);
   }
   ngOnInit(): void {
