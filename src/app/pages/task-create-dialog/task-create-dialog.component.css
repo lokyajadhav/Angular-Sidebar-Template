@@ -1,47 +1,35 @@
 .dialog-container {
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     max-width: 500px;
     width: 100%;
   }
   
   h2 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #2c3e50;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
   
   mat-form-field {
-    width: 100%;
-    margin-bottom: 1.2rem;
-  }
-  
-  textarea {
-    resize: vertical;
-    min-height: 100px;
+    font-size: 14px;
   }
   
   mat-dialog-actions {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    padding-top: 1rem;
   }
   
   button {
     min-width: 100px;
-    font-weight: 600;
-  }
-  
-  button[color="primary"] {
-    background-color: #1976d2;
-    color: white;
-  }
-  
-  button[color="primary"]:hover {
-    background-color: #145ea8;
   }
   
