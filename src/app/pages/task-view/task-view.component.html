@@ -68,14 +68,14 @@
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Select Task</mat-label>
               <mat-select formControlName="taskId" required>
-                <mat-option *ngFor="let task of tasks" [value]="task.id">{{ task.title }}</mat-option>
+                <mat-option *ngFor="let task of Tasks" [value]="task.id">{{ task.title }}</mat-option>
               </mat-select>
             </mat-form-field>
       
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Select Developer</mat-label>
               <mat-select formControlName="userId" required>
-                <mat-option *ngFor="let dev of developers" [value]="dev.id">{{ dev.name }}</mat-option>
+                <mat-option *ngFor="let dev of availableDevelopers" [value]="dev.id">{{ dev.name }}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>

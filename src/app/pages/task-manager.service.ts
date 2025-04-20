@@ -65,4 +65,9 @@ export class TaskManagerService {
 
     return this.http.get(`${this.apiUrl}/get-developers-with-bandwidth`);
   }
+  assignTask(taskId:any, userId:any): Observable<any> {
+   
+
+    return this.http.get(`${this.apiUrl}/assign-task/${taskId}/${userId}`);
+  }
 }
