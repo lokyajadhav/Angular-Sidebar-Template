@@ -14,6 +14,8 @@ export class TaskViewComponent {
   assignForm!: FormGroup;
   displayedColumns: string[] = ['title', 'description', 'assignedTo', 'status','action'];
   dataSource = new MatTableDataSource<any>();
+  displayedColumns1: string[] = ['title', 'description', 'status','action'];
+  dataSource1 = new MatTableDataSource<any>();
   statusOptions: string[] = ['NOT_STARTED', 'IN_PROGRESS', 'COMPLETED'];
   selectedStatus:any
   availableDevelopers:any=[];
@@ -84,19 +86,36 @@ console.log(this.userData);
   }
   fetchTasks()
   {
-    this.taskService.fetchAvailableDevelopers().subscribe(
+    this.taskService.fetchAllTasks().subscribe(
       (response: any) => {
        
-     this.availableDevelopers=response;
-       console.log(this.availableDevelopers)
+        this.dataSource.data=response;
+       
         
         
       },
       (error: any) => {
-        alert(' failed to available developers');
+        alert(' failed to fetch tasks');
       }
     );
     this.dataSource.data=this.Tasks
+  }
+
+  fetchDevTasks()
+  {
+    this.taskService.fetchDeveloperTasks(this.userData.userId).subscribe(
+      (response: any) => {
+       
+        this.dataSource1.data=response;
+       
+        
+        
+      },
+      (error: any) => {
+        alert(' failed to fetch tasks ');
+      }
+    );
+  
   }
 
 
