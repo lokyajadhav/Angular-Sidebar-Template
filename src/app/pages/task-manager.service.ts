@@ -65,6 +65,16 @@ export class TaskManagerService {
 
     return this.http.get(`${this.apiUrl}/get-developers-with-bandwidth`);
   }
+  fetchAllTasks(): Observable<any> {
+   
+
+    return this.http.get(`${this.apiUrl}/get-all-tasks`);
+  }
+  fetchDeveloperTasks(userId:any): Observable<any> {
+   
+
+    return this.http.get(`${this.apiUrl}/get-all-tasks`);
+  }
   assignTask(taskId:any, userId:any): Observable<any> {
    
 

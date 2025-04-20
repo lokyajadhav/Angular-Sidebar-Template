@@ -84,7 +84,18 @@ console.log(this.userData);
   }
   fetchTasks()
   {
-  
+    this.taskService.fetchAvailableDevelopers().subscribe(
+      (response: any) => {
+       
+     this.availableDevelopers=response;
+       console.log(this.availableDevelopers)
+        
+        
+      },
+      (error: any) => {
+        alert(' failed to available developers');
+      }
+    );
     this.dataSource.data=this.Tasks
   }
 
