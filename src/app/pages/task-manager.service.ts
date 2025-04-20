@@ -70,6 +70,11 @@ export class TaskManagerService {
 
     return this.http.get(`${this.apiUrl}/get-all-tasks`);
   }
+  fetchAllUsers(): Observable<any> {
+   
+
+    return this.http.get(`${this.apiUrl}/get-all-users`);
+  }
   fetchDeveloperTasks(userId:any): Observable<any> {
    
 

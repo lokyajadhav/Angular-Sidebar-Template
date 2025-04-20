@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { TaskManagerService } from '../task-manager.service';
 
 @Component({
   selector: 'app-resources',
@@ -6,5 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./resources.component.css']
 })
 export class ResourcesComponent {
+ displayedColumns: string[] = ['name', 'designation', 'hasBandwidth', 'tasks'];
+  dataSource = new MatTableDataSource<any>();
+  constructor(private taskService:TaskManagerService)
+  {
 
+  }
+
+  fetchTasks()
+  {
+    this.taskService.fetchAllTasks().subscribe(
+      (response: any) => {
+      
+        this.dataSource.data=response;
+       
+        
+        
+      },
+      (error: any) => {
+        alert(' failed to fetch users');
+      }
+    );
+    
+  }
 }
