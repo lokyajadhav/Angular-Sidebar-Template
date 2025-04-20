@@ -10,7 +10,7 @@ export class TaskViewComponent {
 
   displayedColumns: string[] = ['title', 'description', 'assignedTo', 'status','action'];
   dataSource = new MatTableDataSource<any>();
-
+  statusOptions: string[] = ['NOT_STARTED', 'IN_PROGRESS', 'COMPLETED'];
 
   ngOnInit(): void {
     this.fetchTasks();
@@ -35,4 +35,7 @@ export class TaskViewComponent {
     this.dataSource.data=Tasks
   }
 
+
+  updateStatus(task:any): void {
+  }
 }
