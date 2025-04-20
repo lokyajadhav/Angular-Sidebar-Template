@@ -26,7 +26,7 @@ export class TaskViewComponent {
       status: 'IN_PROGRESS'
     },
     {
-      id:2,
+      id:4,
       title: 'Design Dashboard',
       description: 'Create UI for dashboard page',
       assignedTo: 'Madhav',
