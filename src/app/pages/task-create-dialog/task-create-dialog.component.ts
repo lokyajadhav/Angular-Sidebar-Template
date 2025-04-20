@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { TaskManagerService } from '../task-manager.service';
 
 @Component({
   selector: 'app-task-create-dialog',
@@ -13,7 +14,7 @@ export class TaskCreateDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<TaskCreateDialogComponent>,
    
-    private fb: FormBuilder
+    private fb: FormBuilder, private taskService: TaskManagerService
   ) {
     this.taskForm = this.fb.group({
       title: ['', Validators.required],
@@ -25,12 +26,28 @@ export class TaskCreateDialogComponent {
     this.dialogRef.close();
   }
 
-  onSubmit(): void {
+
+
+  onSubmit() {
     if (this.taskForm.valid) {
+
       const taskData = this.taskForm.value;
-      // Call API to save task here (e.g., taskService.createTask(taskData))
-      console.log('Task Created:', taskData);
-      this.dialogRef.close(taskData);
+     
+     
+
+      this.taskService.createTask(taskData).subscribe(
+        (response: any) => {
+         
+
+         alert('task created')
+          this.dialogRef.close(taskData);
+          
+          
+        },
+        (error: any) => {
+          alert('task creation failed');
+        }
+      );
     }
   }
 }

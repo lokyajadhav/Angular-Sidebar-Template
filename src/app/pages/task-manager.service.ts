@@ -55,4 +55,9 @@ export class TaskManagerService {
 
     return this.http.post(`${this.apiUrl}/login`, payload);
   }
+  createTask(payload:any): Observable<any> {
+   
+
+    return this.http.post(`${this.apiUrl}/create-task`, payload);
+  }
 }
