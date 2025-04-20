@@ -25,6 +25,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import { MatOptionModule } from '@angular/material/core';
 
 
 
@@ -58,7 +59,8 @@ import {MatTableModule} from '@angular/material/table';
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatOptionModule,
 
 
 
