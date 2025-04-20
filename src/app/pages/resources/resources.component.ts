@@ -8,16 +8,19 @@ import { TaskManagerService } from '../task-manager.service';
   styleUrls: ['./resources.component.css']
 })
 export class ResourcesComponent {
- displayedColumns: string[] = ['name', 'designation', 'hasBandwidth', 'tasks'];
+ displayedColumns: string[] = ['name','email' ,'designation', 'hasBandwidth', 'tasks'];
   dataSource = new MatTableDataSource<any>();
   constructor(private taskService:TaskManagerService)
   {
 
   }
+  ngOnInit(): void {
+    this.fetchTasks();
+  }
 
   fetchTasks()
   {
-    this.taskService.fetchAllTasks().subscribe(
+    this.taskService.fetchAllUsers().subscribe(
       (response: any) => {
       
         this.dataSource.data=response;
