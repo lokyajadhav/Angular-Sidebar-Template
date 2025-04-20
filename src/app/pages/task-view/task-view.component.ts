@@ -23,7 +23,7 @@ export class TaskViewComponent {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(TaskCreateDialogComponent, {
-      width: '400px'
+      width: '565px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
