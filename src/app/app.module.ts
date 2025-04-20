@@ -30,7 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TaskCreateDialogComponent } from './pages/task-create-dialog/task-create-dialog.component';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -71,7 +71,7 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     MatOptionModule,
     MatFormFieldModule,
-    MatSelectModule,MatDialogModule,MatInputModule,MatButtonModule
+    MatSelectModule,MatDialogModule,MatInputModule,MatButtonModule,MatTooltipModule
     
 
 
