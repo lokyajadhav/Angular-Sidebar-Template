@@ -75,10 +75,10 @@ export class TaskManagerService {
 
     return this.http.get(`${this.apiUrl}/get-develper-tasks/${userId}`);
   }
-  updateTask(userId:any): Observable<any> {
+  updateTask(taskId:any,status:any): Observable<any> {
    
 
-    return this.http.get(`${this.apiUrl}/get-develper-tasks/${userId}`);
+    return this.http.get(`${this.apiUrl}/update-task/${taskId}/${status}`);
   }
   assignTask(taskId:any, userId:any): Observable<any> {
    
