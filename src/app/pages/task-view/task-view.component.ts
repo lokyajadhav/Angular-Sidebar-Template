@@ -17,12 +17,15 @@ export class TaskViewComponent {
   statusOptions: string[] = ['NOT_STARTED', 'IN_PROGRESS', 'COMPLETED'];
   selectedStatus:any
   availableDevelopers:any=[];
-  Tasks = [
+  Tasks:any = [
    
   ];
+  userData:any;
   constructor(private fb: FormBuilder, private dialog: MatDialog, private taskService:TaskManagerService)
   {
-
+this.userData.userId=localStorage.getItem('userId');
+this.userData.role=localStorage.getItem('role');
+console.log(this.userData);
   }
   ngOnInit(): void {
     this.fetchTasks();

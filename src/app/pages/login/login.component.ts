@@ -30,6 +30,7 @@ export class LoginComponent {
         (response: any) => {
           console.log('Login successful', response);
           localStorage.setItem('role', role);
+          localStorage.setItem('userId',response.id);
 
           let event = {}
           if (role === "Manager") {
