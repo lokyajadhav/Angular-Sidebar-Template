@@ -28,6 +28,8 @@ import {MatTableModule} from '@angular/material/table';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TaskCreateDialogComponent } from './pages/task-create-dialog/task-create-dialog.component';
 
 
 
@@ -45,7 +47,8 @@ import { MatSelectModule } from '@angular/material/select';
         TaskViewComponent,
         
         ResourcesComponent,
-        LoginComponent
+        LoginComponent,
+        TaskCreateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,7 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     MatOptionModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,MatDialogModule
     
 
 
