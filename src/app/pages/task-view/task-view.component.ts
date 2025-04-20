@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { TaskCreateDialogComponent } from '../task-create-dialog/task-create-dialog.component';
 
 @Component({
   selector: 'app-task-view',
@@ -12,10 +14,24 @@ export class TaskViewComponent {
   dataSource = new MatTableDataSource<any>();
   statusOptions: string[] = ['NOT_STARTED', 'IN_PROGRESS', 'COMPLETED'];
   selectedStatus:any
+  constructor(private dialog: MatDialog)
+  {
+
+  }
   ngOnInit(): void {
     this.fetchTasks();
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(TaskCreateDialogComponent, {
+      width: '400px'
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchTasks();
+      }
+    });
+  }
   fetchTasks()
   {
    const Tasks = [
