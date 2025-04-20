@@ -2,4 +2,7 @@
     width: 160px;
     height: 40px;
   }
-  
+  :host ::ng-deep .mat-mdc-text-field-wrapper
+  {
+    height: 45px !important;
+  }
