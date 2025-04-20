@@ -60,4 +60,9 @@ export class TaskManagerService {
 
     return this.http.post(`${this.apiUrl}/create-task`, payload);
   }
+  fetchAvailableDevelopers(): Observable<any> {
+   
+
+    return this.http.get(`${this.apiUrl}/get-developers-with-bandwidth`);
+  }
 }

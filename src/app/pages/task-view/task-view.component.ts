@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { TaskCreateDialogComponent } from '../task-create-dialog/task-create-dialog.component';
+import { TaskManagerService } from '../task-manager.service';
 
 @Component({
   selector: 'app-task-view',
@@ -14,12 +15,29 @@ export class TaskViewComponent {
   dataSource = new MatTableDataSource<any>();
   statusOptions: string[] = ['NOT_STARTED', 'IN_PROGRESS', 'COMPLETED'];
   selectedStatus:any
-  constructor(private dialog: MatDialog)
+  availableDevelopers=[];
+  constructor(private dialog: MatDialog, private taskService:TaskManagerService)
   {
 
   }
   ngOnInit(): void {
     this.fetchTasks();
+    this. fetchAvailableDevelopers();
+  }
+  fetchAvailableDevelopers()
+  {
+    this.taskService.fetchAvailableDevelopers().subscribe(
+      (response: any) => {
+       
+     this.availableDevelopers=response;
+       console.log(this.availableDevelopers)
+        
+        
+      },
+      (error: any) => {
+        alert(' failed to available developers');
+      }
+    );
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(TaskCreateDialogComponent, {
@@ -29,6 +47,7 @@ export class TaskViewComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.fetchTasks();
+       this. fetchAvailableDevelopers();
       }
     });
   }
