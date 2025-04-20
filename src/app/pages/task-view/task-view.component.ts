@@ -8,7 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TaskViewComponent {
 
-  displayedColumns: string[] = ['title', 'description', 'assignedTo', 'status'];
+  displayedColumns: string[] = ['title', 'description', 'assignedTo', 'status','action'];
   dataSource = new MatTableDataSource<any>();
 
 
