@@ -53,7 +53,7 @@ export class LoginComponent {
           this.loginService.triggerTaskAssigned(event)
 
           this.loginService.loggedInn();
-          this.router.navigate(['/tasks-view']);
+          this.router.navigate(['/tasks-manager']);
         },
         (error: any) => {
           alert('Login failed');
