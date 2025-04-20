@@ -17,21 +17,8 @@ export class TaskViewComponent {
   statusOptions: string[] = ['NOT_STARTED', 'IN_PROGRESS', 'COMPLETED'];
   selectedStatus:any
   availableDevelopers:any=[];
-   Tasks = [
-    {
-      id:1,
-      title: 'Fix Login Bug',
-      description: 'Resolve issue in login form validation',
-      assignedTo: 'Ravi',
-      status: 'IN_PROGRESS'
-    },
-    {
-      id:4,
-      title: 'Design Dashboard',
-      description: 'Create UI for dashboard page',
-      assignedTo: 'Madhav',
-      status: 'NOT_STARTED'
-    }
+  Tasks = [
+   
   ];
   constructor(private fb: FormBuilder, private dialog: MatDialog, private taskService:TaskManagerService)
   {
