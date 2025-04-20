@@ -1,0 +1,15 @@
+/* task-create-dialog.component.css */
+
+mat-form-field {
+    width: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
