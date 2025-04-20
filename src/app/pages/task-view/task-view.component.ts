@@ -123,17 +123,18 @@ console.log(this.userData);
 
   updateStatus(task:any, status:any): void {
 
-    this.taskService.fetchDeveloperTasks(this.userData.userId).subscribe(
+    this.taskService.updateTask(task,status).subscribe(
       (response: any) => {
        
-        console.log(response)
-        this.dataSource1.data=response;
        
-        
+       
+        alert("task status changed");
+        this.fetchAvailableDevelopers();
+        this.fetchTasks();
         
       },
       (error: any) => {
-        alert(' failed to fetch tasks ');
+        alert(' failed to update the task ');
       }
     );
   }
