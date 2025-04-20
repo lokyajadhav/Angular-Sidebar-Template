@@ -22,7 +22,7 @@ import { TaskViewComponent } from './pages/task-view/task-view.component';
 import { TasksManangerComponent } from './pages/tasks-mananger/tasks-mananger.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 
@@ -57,7 +57,8 @@ import {MatTableModule} from '@angular/material/table';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule
 
 
 
