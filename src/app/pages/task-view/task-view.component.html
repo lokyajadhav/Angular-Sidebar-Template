@@ -110,7 +110,7 @@
 
 
 <hr style="margin-top: 10px;">
-    <div class="assign-container">
+    <div class="assign-container"  *ngIf="userData?.role==='Manager'">
         <h2>Assign Task to Developer</h2>
       
         <form [formGroup]="assignForm" (ngSubmit)="onAssignTask()">
